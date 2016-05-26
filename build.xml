@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Nightpad" default="default" basedir=".">        
+
+    <property environment="env" />
+
+    <taskdef name="bundleapp"
+             classname="com.oracle.appbundler.AppBundlerTask"   
+             classpath="appbundler-1.0.jar" />
+
+    <target name="default">
+        <bundleapp outputdirectory="."
+            name="Nightpad"
+            displayname="Nightpad"
+            identifier="net.sekao.nightpad"
+            shortversion="1.0.0"
+            icon="logo_launcher.icns"
+            mainclassname="nightpad.core"
+            copyright="Public Domain"
+            applicationCategory="public.app-category.developer-tools">
+            <runtime dir="${env.JAVA_HOME}" />
+            <classpath file="nightpad.jar" />
+        </bundleapp>
+    </target>
+
+</project>
